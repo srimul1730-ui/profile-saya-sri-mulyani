@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Pink Bloom | Personal Website</title>
+
+<style>
+/* ===== DASAR ===== */
+:root {
+    --pink: #e8a0b8;
+    --pink-dark: #bd718d;
+    --pink-light: #fff1f6;
+    --pink-soft: #f9e2eb;
+    --white: #ffffff;
+    --text: #59434d;
+    --muted: #957d88;
+    --border: #f2dce5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #fffafb;
+    color: var(--text);
+    line-height: 1.8;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+    width: 90%;
+    max-width: 1050px;
+    margin: auto;
+}
+
+section {
+    scroll-margin-top: 90px;
+}
+
+/* ===== NAVIGASI ===== */
+header {
+    background: rgba(255, 255, 255, 0.96);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
+    min-height: 76px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    font-family: Georgia, serif;
+    font-size: 25px;
+    font-weight: bold;
+    color: var(--pink-dark);
+    white-space: nowrap;
+}
+
+.logo span {
+    font-weight: normal;
+    color: var(--text);
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+    list-style: none;
+}
+
+.nav-links a {
+    font-size: 13px;
+    color: var(--muted);
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--pink-dark);
+}
+
+/* ===== BERANDA ===== */
+.hero {
+    padding: 90px 0;
+    background:
+        radial-gradient(
+            circle at 90% 15%,
+            #f8dce7 0,
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 5% 90%,
+            #fcebf1 0,
+            transparent 30%
+        ),
+        #fff8fb;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 40px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 7px 16px;
+    border: 1px solid var(--border);
+    border-radius: 30px;
+    background: white;
+    color: var(--pink-dark);
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin-bottom: 22px;
+}
+
+.hero h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(40px, 6vw, 65px);
+    font-weight: normal;
+    line-height: 1.2;
+    letter-spacing: -1px;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: var(--pink-dark);
+    font-style: italic;
+}
+
+.hero p {
+    max-width: 470px;
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 28px;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 11px 23px;
+    border-radius: 30px;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background: var(--pink-dark);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #a95c79;
+    transform: translateY(-3px);
+}
+
+.btn-outline {
+    border: 1px solid #dfb1c2;
+    color: var(--pink-dark);
+    background: white;
+}
+
+.btn-outline:hover {
+    background: var(--pink-light);
+}
+
+/* ===== DEKORASI BERANDA ===== */
+.hero-art {
+    min-height: 310px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-circle {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: linear-gradient(
+        145deg,
+        #f8dce7,
+        #e7a3bb
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: 0 20px 50px #d58aa41c;
+}
+
+.profile-inner {
+    width: 195px;
+    height: 195px;
+    border-radius: 50%;
+    background: #fffafb;
+    border: 2px solid white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.flower {
+    font-family: Georgia, serif;
+    font-size: 65px;
+    line-height: 1.5;
+    color: var(--pink-dark);
+}
+
+.profile-inner p {
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-size: 12px;
+    color: var(--pink-dark);
+}
+
+.float-heart {
+    position: absolute;
+    top: 8px;
+    right: -5px;
+    font-size: 35px;
+    color: var(--pink-dark);
+}
+
+.float-star {
+    position: absolute;
+    bottom: 5px;
+    left: -5px;
+    font-size: 30px;
+    color: var(--pink-dark);
+}
+
+/* ===== JUDUL BAGIAN ===== */
+.content-section {
+    padding: 80px 0;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.eyebrow {
+    color: var(--pink-dark);
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.section-heading h2 {
+    font-family: Georgia, serif;
+    font-size: clamp(28px, 4vw, 38px);
+    font-weight: normal;
+    margin: 8px 0;
+}
+
+.section-heading p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* ===== KARTU ===== */
+.card {
+    padding: 30px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    box-shadow: 0 8px 30px #c58aa40b;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px #c58aa41a;
+}
+
+.card h3 {
+    font-family: Georgia, serif;
+    font-size: 21px;
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* ===== PROFIL ===== */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 11px 0;
+    border-bottom: 1px solid #f7e9ef;
+    font-size: 13px;
+}
+
+.info-row:last-child {
+    border-bottom: none;
+}
+
+.info-row span {
+    color: var(--muted);
+}
+
+.info-row strong {
+    text-align: right;
+    overflow-wrap: anywhere;
+}
+
+/* ===== MINAT ===== */
+.interest-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.interest-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 30px 22px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.interest-card:hover {
+    transform: translateY(-5px);
+    background: #fff5f8;
+}
+
+.interest-icon {
+    width: 65px;
+    height: 65px;
+    margin: 0 auto 18px;
+    border-radius: 50%;
+    background: var(--pink-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--pink-dark);
+    font-family: Georgia, serif;
+    font-size: 30px;
+}
+
+.interest-card h3 {
+    font-family: Georgia, serif;
+    font-size: 19px;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+.interest-card p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* ===== KEAHLIAN ===== */
+.skills-box {
+    padding: 38px 25px;
+    border-radius: 24px;
+    border: 1px solid var(--border);
+    background: linear-gradient(
+        135deg,
+        #fff3f7,
+        #fce5ee
+    );
+    text-align: center;
+}
+
+.skills-box h3 {
+    font-family: Georgia, serif;
+    font-size: 23px;
+    font-weight: normal;
+    margin-bottom: 23px;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+.skill {
+    padding: 8px 17px;
+    border-radius: 25px;
+    background: white;
+    border: 1px solid #f0d6e1;
+    color: var(--pink-dark);
+    font-size: 12px;
+}
+
+/* ===== CITA-CITA ===== */
+.goal-card {
+    padding: 45px 30px;
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    background: white;
+    text-align: center;
+}
+
+.goal-icon {
+    color: var(--pink-dark);
+    font-family: Georgia, serif;
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.goal-card h3 {
+    font-family: Georgia, serif;
+    font-weight: normal;
+    font-size: 27px;
+    margin-bottom: 15px;
+}
+
+.goal-card p {
+    max-width: 620px;
+    margin: auto;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.goal-quote {
+    color: var(--pink-dark) !important;
+    font-family: Georgia, serif;
+    font-style: italic;
+}
+
+/* ===== PENUTUP ===== */
+.closing {
+    padding: 55px 20px;
+    background: var(--pink-light);
+    text-align: center;
+}
+
+.closing h2 {
+    font-family: Georgia, serif;
+    font-size: 30px;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+.closing p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background: #674956;
+    color: white;
+    text-align: center;
+    padding: 28px 15px;
+}
+
+footer h3 {
+    font-family: Georgia, serif;
+    font-weight: normal;
+    font-size: 23px;
+    margin-bottom: 8px;
+}
+
+footer p {
+    color: #f4dce5;
+    font-size: 12px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 750px) {
+    .container {
+        width: 90%;
+    }
+
+    .navbar {
+        padding: 15px 0;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-links {
+        justify-content: center;
+        gap: 8px 16px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .hero {
+        padding: 55px 0 35px;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .hero p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+
+    .hero-art {
+        min-height: 260px;
+    }
+
+    .profile-circle {
+        width: 215px;
+        height: 215px;
+    }
+
+    .profile-inner {
+        width: 170px;
+        height: 170px;
+    }
+
+    .flower {
+        font-size: 55px;
+    }
+
+    .content-section {
+        padding: 60px 0;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .interest-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        padding: 25px;
+    }
+
+    .goal-card {
+        padding: 35px 22px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGASI -->
+<header>
+    <nav class="navbar container">
+        <a href="#beranda" class="logo">
+            pinkbloom<span>.</span>
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="#beranda">Beranda</a></li>
+            <li><a href="#tentang">Tentang</a></li>
+            <li><a href="#minat">Minat</a></li>
+            <li><a href="#keahlian">Keahlian</a></li>
+            <li><a href="#cita-cita">Cita-cita</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+<!-- BERANDA -->
+<section class="hero" id="beranda">
+    <div class="container hero-content">
+
+        <div>
+            <span class="badge">WELCOME TO MY LITTLE WORLD</span>
+
+            <h1>
+                Little Things,<br>
+                <span>Big Dreams.</span>
+            </h1>
+
+            <p>
+                Selamat datang di website pribadiku.
+                Sebuah ruang kecil untuk mengenal diriku,
+                hal-hal yang aku sukai, dan mimpi yang
+                ingin aku wujudkan.
+            </p>
+
+            <div class="buttons">
+                <a href="#tentang" class="btn btn-primary">
+                    Kenali Aku
+                </a>
+
+                <a href="#cita-cita" class="btn btn-outline">
+                    My Dreams
+                </a>
+            </div>
+        </div>
+
+        <div class="hero-art">
+            <div class="profile-circle">
+
+                <span class="float-heart">౨ৎ</span>
+
+                <div class="profile-inner">
+                    <span class="flower">୨୧</span>
+                    <p>a little space to grow</p>
+                </div>
+
+                <span class="float-star">✧</span>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- TENTANG SAYA -->
+<section class="content-section" id="tentang">
+    <div class="container">
+
+        <div class="section-heading">
+            <span class="eyebrow">GET TO KNOW ME</span>
+            <h2>A Little About Me</h2>
+            <p>Beberapa hal sederhana tentang diriku.</p>
+        </div>
+
+        <div class="about-grid">
+
+            <div class="card">
+                <h3>Halo, aku di sini.</h3>
+
+                <p>
+                    Aku seorang pelajar yang senang mempelajari
+                    hal baru, terutama di bidang teknologi.
+                    Bagiku, setiap pengalaman adalah kesempatan
+                    untuk tumbuh dan mengembangkan diri.
+                </p>
+
+                <br>
+
+                <p>
+                    Aku percaya bahwa proses belajar tidak harus
+                    selalu sempurna. Yang penting adalah terus
+                    mencoba, memperbaiki kesalahan, dan tidak
+                    berhenti berkembang.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>My Profile</h3>
+
+                <div class="info-row">
+                    <span>Nama</span>
+                    <strong>Nama Kamu</strong>
+                </div>
+
+                <div class="info-row">
+                    <span>Kelas</span>
+                    <strong>XI TJKT 1</strong>
+                </div>
+
+                <div class="info-row">
+                    <span>Sekolah</span>
+                    <strong>SMK Negeri 3 Depok</strong>
+                </div>
+
+                <div class="info-row">
+                    <span>Bidang</span>
+                    <strong>Teknologi Informasi</strong>
+                </div>
+
+                <div class="info-row">
+                    <span>Motto</span>
+                    <strong>Keep Growing</strong>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- MINAT -->
+<section class="content-section" id="minat">
+    <div class="container">
+
+        <div class="section-heading">
+            <span class="eyebrow">THINGS I LOVE</span>
+            <h2>My Interests</h2>
+            <p>Hal-hal yang ingin aku pelajari dan kembangkan.</p>
+        </div>
+
+        <div class="interest-grid">
+
+            <div class="interest-card">
+                <div class="interest-icon">⌘</div>
+
+                <h3>Technology</h3>
+
+                <p>
+                    Mengenal teknologi, memahami komputer,
+                    dan mempelajari cara kerja jaringan.
+                </p>
+            </div>
+
+            <div class="interest-card">
+                <div class="interest-icon">✧</div>
+
+                <h3>Web Development</h3>
+
+                <p>
+                    Belajar membuat website yang menarik,
+                    mudah digunakan, dan bermanfaat.
+                </p>
+            </div>
+
+            <div class="interest-card">
+                <div class="interest-icon">୨୧</div>
+
+                <h3>New Experiences</h3>
+
+                <p>
+                    Mencoba hal baru, menambah pengetahuan,
+                    dan mengembangkan kemampuan diri.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- KEAHLIAN -->
+<section class="content-section" id="keahlian">
+    <div class="container">
+
+        <div class="section-heading">
+            <span class="eyebrow">MY LEARNING JOURNEY</span>
+            <h2>Skills & Learning</h2>
+            <p>Kemampuan yang sedang aku pelajari.</p>
+        </div>
+
+        <div class="skills-box">
+            <h3>Things I'm Exploring</h3>
+
+            <div class="skills">
+                <span class="skill">HTML</span>
+                <span class="skill">CSS</span>
+                <span class="skill">Computer Networking</span>
+                <span class="skill">Basic Programming</span>
+                <span class="skill">Problem Solving</span>
+                <span class="skill">Creative Thinking</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- CITA-CITA -->
+<section class="content-section" id="cita-cita">
+    <div class="container">
+
+        <div class="section-heading">
+            <span class="eyebrow">A LETTER TO MY FUTURE</span>
+            <h2>Dream Big, Start Small</h2>
+            <p>Setiap langkah kecil punya arti.</p>
+        </div>
+
+        <div class="goal-card">
+
+            <div class="goal-icon">౨ৎ</div>
+
+            <h3>Future Programmer</h3>
+
+            <p>
+                Aku ingin menjadi programmer yang mampu
+                membuat website dan aplikasi yang bermanfaat.
+                Aku ingin terus belajar, meningkatkan kemampuan,
+                dan mencoba berbagai hal baru di bidang teknologi.
+            </p>
+
+            <br>
+
+            <p class="goal-quote">
+                "One day, I'll be proud of how far I've come."
+            </p>
+
+        </div>
+    </div>
+</section>
+
+<!-- PENUTUP -->
+<section class="closing">
+    <div class="container">
+        <h2>Thank You for Visiting</h2>
+
+        <p>
+            This is just the beginning of my journey.
+        </p>
+
+        <p style="margin-top: 12px; color: #bd718d;">
+            ୨୧ &nbsp; growing at my own pace &nbsp; ୨୧
+        </p>
+    </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+    <h3>pinkbloom.</h3>
+
+    <p>A little space to grow and dream.</p>
+
+    <p style="margin-top: 10px;">
+        © 2026 Pinkbloom Studio
+    </p>
+</footer>
+
+</body>
+  </html>
